@@ -10,6 +10,7 @@ const advertisementSchema = mongoose.Schema(
     transmissionType: { type: String, default: 'Механика' }, // Коробка передач
     condition: { type: String, default: 'Не требует ремонта' }, // Состояние автомобиля
     countOwner: { type: Number, default: 1 }, // Количество владельцев
+    description: { type: Text, default: '' },
   },
   {
     timestamps: true,
