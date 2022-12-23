@@ -1,8 +1,9 @@
 import express from 'express';
 export const userRouter = new express.Router();
+import authController from '../controllers/authController.js';
+import { checkAuthMiddleware } from '../middleware/checkAuthMiddleware.js';
 
-userRouter.get('/profile', (req, res) => {
-  res.json({
-    message: 'Hello !',
-  });
-});
+userRouter.post('/register', authController.register);
+userRouter.post('/login', authController.login);
+userRouter.post('/upload', checkAuthMiddleware, authController.uploadAvatar);
+userRouter.delete('/upload', checkAuthMiddleware, authController.delteAvatar);
