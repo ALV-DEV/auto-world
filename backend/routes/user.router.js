@@ -5,5 +5,6 @@ import { checkAuthMiddleware } from '../middleware/checkAuthMiddleware.js';
 
 userRouter.post('/register', authController.register);
 userRouter.post('/login', authController.login);
+userRouter.get('/', authController.getProfile);
 userRouter.post('/upload', checkAuthMiddleware, authController.uploadAvatar);
 userRouter.delete('/upload', checkAuthMiddleware, authController.delteAvatar);

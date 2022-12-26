@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import path from 'path';
 import { userRouter } from './routes/user.router.js';
+import { carMarkRoute } from './routes/carMark.route.js';
+import { carModelRoute } from './routes/carModel.route.js';
 
 dotenv.config();
 
@@ -15,6 +17,8 @@ app.use('/static', express.static(path.join(__dirname, '/static')));
 //routes
 
 app.use('/api/auth', userRouter);
+app.use('/api/car-mark', carMarkRoute);
+app.use('/api/car-model', carModelRoute);
 
 const PORT = process.env.PORT || 8080;
 

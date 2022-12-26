@@ -2,15 +2,15 @@ import mongoose from 'mongoose';
 
 const carMarkSchema = mongoose.Schema(
   {
-    name: String,
+    name: { type: String, required: true },
     brandImageUrl: { type: String, default: '' },
-    description: { type: Text, default: '' },
+    description: { type: String, default: '' },
   },
   {
     timestamps: true,
   },
 );
 
-const CarMark = mongoose.Model('CarMark', carMarkSchema);
+const CarMark = mongoose.model('CarMark', carMarkSchema);
 
 export default CarMark;

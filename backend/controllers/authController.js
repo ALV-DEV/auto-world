@@ -119,7 +119,6 @@ class AuthController {
               size: formatBytes(file.size),
             }),
           );
-          console.log(user);
           user.avatarUrl = paths[0].path;
           await user.save();
 
